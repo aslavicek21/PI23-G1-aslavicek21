@@ -9,9 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EvaluationManager {
+
     public partial class FrmStudents : Form {
         public FrmStudents() {
             InitializeComponent();
+        }
+
+        private void ShowStudents() {
+            StudentRepository repository = new StudentRepository();
+            List<Student> students = repository.GetStudents();
+            dgvStudents.DataSource = students;
+        }
+
+        private void FrmStudents_Load(object sender, EventArgs e) {
+            ShowStudents();
         }
     }
 }
