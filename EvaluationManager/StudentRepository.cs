@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace EvaluationManager {
 
-    public class StudentRepository {
-        public Student CreateObject(SqlDataReader reader) {
+    public static class StudentRepository {
+        public static Student CreateObject(SqlDataReader reader) {
             Student student = new Student();
             student.Id = Convert.ToInt32(reader["Id"].ToString());
             student.FirstName = reader["FirstName"].ToString();
@@ -21,7 +21,7 @@ namespace EvaluationManager {
 
             return student;
         }
-        public Student GetStudent(int id) {
+        public static Student GetStudent(int id) {
             Student student = null;
             DB.OpenConnection();
             SqlDataReader reader = DB.GetDataReader($"SELECT * FROM Students WHERE Id = {id}");
@@ -33,7 +33,7 @@ namespace EvaluationManager {
             DB.CloseConnection();
             return student;
         }
-        public List<Student> GetStudents() {
+        public static List<Student> GetStudents() {
             List<Student> students = new List<Student>();
             DB.OpenConnection();
             SqlDataReader reader = DB.GetDataReader($"SELECT * FROM Students");
@@ -46,7 +46,6 @@ namespace EvaluationManager {
             DB.CloseConnection();
             return students;
         }
-
         
     }
 }
