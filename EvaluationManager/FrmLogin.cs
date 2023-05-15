@@ -10,8 +10,7 @@ using System.Windows.Forms;
 
 namespace EvaluationManager {
     public partial class FrmLogin : Form {
-        string userName = "Nastavnik";
-        string passWord = "Lozinka";
+        public static Teacher LoggedTeacher { get; set; }
         public FrmLogin() {
             InitializeComponent();
         }
@@ -23,10 +22,13 @@ namespace EvaluationManager {
             else if (txtPassword.Text == "") {
                 MessageBox.Show("Lozinka nije unesena!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else {
-                if (txtUserName.Text == userName && txtPassword.Text == passWord) {
-                    FrmStudents students = new FrmStudents();
+
+                LoggedTeacher = TeacherRepository.GetTeacher(txtUserName.Text);
+                if (LoggedTeacher != null && LoggedTeacher.CheckPassword(txtPassword.Text)) {
+                    FrmStudents frmStudents = new FrmStudents();
+                    frmStudents.Text = $"{LoggedTeacher.FirstName} {LoggedTeacher.LastName}";
                     Hide();
-                    students.ShowDialog();
+                    frmStudents.ShowDialog();
                     Close();
                 } else {
                     MessageBox.Show("Krivi podaci", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,6 +37,10 @@ namespace EvaluationManager {
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e) {
 
         }
     }
