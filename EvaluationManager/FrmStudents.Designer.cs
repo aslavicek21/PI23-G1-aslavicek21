@@ -38,7 +38,7 @@
             this.dgvStudents.Location = new System.Drawing.Point(12, 12);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(737, 459);
+            this.dgvStudents.Size = new System.Drawing.Size(737, 460);
             this.dgvStudents.TabIndex = 0;
             // 
             // btnEvaluateStudent
@@ -54,11 +54,11 @@
             // 
             // btnGenerateReport
             // 
-            this.btnGenerateReport.Location = new System.Drawing.Point(13, 477);
+            this.btnGenerateReport.Location = new System.Drawing.Point(13, 478);
             this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(95, 45);
+            this.btnGenerateReport.Size = new System.Drawing.Size(95, 44);
             this.btnGenerateReport.TabIndex = 2;
-            this.btnGenerateReport.Text = "Generiraj izvješće";
+            this.btnGenerateReport.Text = "Generiraj izvještaj";
             this.btnGenerateReport.UseVisualStyleBackColor = true;
             this.btnGenerateReport.Click += new System.EventHandler(this.button1_Click);
             // 
