@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.btnEvaluateStudent = new System.Windows.Forms.Button();
-            this.btnGenerateReport = new System.Windows.Forms.Button();
+            this.btnGenerate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,22 +52,22 @@
             this.btnEvaluateStudent.UseVisualStyleBackColor = true;
             this.btnEvaluateStudent.Click += new System.EventHandler(this.btnEvaluateStudent_Click);
             // 
-            // btnGenerateReport
+            // btnGenerate
             // 
-            this.btnGenerateReport.Location = new System.Drawing.Point(13, 478);
-            this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(95, 44);
-            this.btnGenerateReport.TabIndex = 2;
-            this.btnGenerateReport.Text = "Generiraj izvještaj";
-            this.btnGenerateReport.UseVisualStyleBackColor = true;
-            this.btnGenerateReport.Click += new System.EventHandler(this.button1_Click);
+            this.btnGenerate.Location = new System.Drawing.Point(26, 492);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerate.TabIndex = 2;
+            this.btnGenerate.Text = "Generiraj izvješće";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 527);
-            this.Controls.Add(this.btnGenerateReport);
+            this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnEvaluateStudent);
             this.Controls.Add(this.dgvStudents);
             this.Name = "FrmStudents";
@@ -82,6 +82,7 @@
 
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnEvaluateStudent;
+        private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnGenerateReport;
     }
 }
